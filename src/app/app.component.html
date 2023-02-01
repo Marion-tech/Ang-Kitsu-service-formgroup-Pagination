@@ -1,0 +1,18 @@
+<div *ngFor="let anime of dataAnime$ | async">
+  {{ anime.attributes.canonicalTitle }}
+</div>
+<!-- {{ dataAnime$ | async | json }} -->
+
+<footer>
+  <form class="offset" [formGroup]="formGroup">
+    <div>
+      <button (click)="previous()"><</button>
+      <button (click)="next()">></button>
+    </div>
+    <select formControlName="limit">
+      <option [value]="5">5</option>
+      <option [value]="10">10</option>
+      <option [value]="20">20</option>
+    </select>
+  </form>
+</footer>
